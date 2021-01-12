@@ -1,25 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Information from 'components/Information';
+import Canvas from 'components/Canvas';
+import FormGrid from 'components/FormGrid';
+import ReduxProvider from 'redux/store';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ReduxProvider>
+      <div data-testid="app" className="container text-center">
+        <Information />
+        <hr />
+        <React.Suspense fallback={<div>Loading...</div>}>
+          <FormGrid />
+          <hr />
+          <Canvas />
+        </React.Suspense>
+      </div>
+    </ReduxProvider>
   );
 }
 

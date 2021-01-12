@@ -1,0 +1,19 @@
+.cell {
+  min-height: 5rem;
+  width: 100%;
+  cursor:pointer;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid .1rem #fff;
+  background-color: blue;
+
+  &--ocean {
+    background-color: #0da0ec;
+  }
+
+  &--ground {
+    background-color: saddlebrown;
+  }
+}
